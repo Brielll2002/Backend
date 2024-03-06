@@ -18,6 +18,7 @@ app.listen(port, (err)=>{
     console.log(`Aplicação rodando na porta: ${port}.`)
 })
 
+//CADASTRO
 app.post('/register', (req, res)=>{
     const {nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade} = req.body
 
@@ -104,9 +105,20 @@ app.post('/register', (req, res)=>{
                         })
                     }
                     else{
-                        const Update = "UPDATE unidade SET qtd_user = qtd_user+1 WHERE nome_unidade = 'Paulista'"
-                        conn.query(Update,(err)=>{
-                            if(err){console.error(err)}
+                        const query = "SELECT * FROM unidade WHERE nome_unidade = ?"
+                        conn.query(query, [nome_unidade], (err, results)=>{
+                            if(results.length > 0){
+                                const Update = "UPDATE unidade SET qtd_user = qtd_user+1 WHERE nome_unidade = ?"
+                                conn.query(Update,[nome_unidade],(err)=>{
+                                    if(err){console.error(err)}
+                                })
+                            }
+                            else{
+                                const createUpdate = "INSERT INTO unidade (nome_unidade, qtd_user) VALUES (?, ?)"
+                                conn.query(createUpdate, [nome_unidade, 1], (err)=>{
+                                    if(err)console.error(err)
+                                })
+                            }
                         })
                         res.status(200).json({
                             response:true,
@@ -115,6 +127,9 @@ app.post('/register', (req, res)=>{
                     }
                 })
             }
+        })
+    }
+})
         })
     }
 })
