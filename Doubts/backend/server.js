@@ -105,6 +105,7 @@ app.post('/register', (req, res)=>{
                         })
                     }
                     else{
+                        //mudar a quantidade de usuário na unidade
                         const query = "SELECT * FROM unidade WHERE nome_unidade = ?"
                         conn.query(query, [nome_unidade], (err, results)=>{
                             if(results.length > 0){
@@ -120,16 +121,30 @@ app.post('/register', (req, res)=>{
                                 })
                             }
                         })
+                        //mudar a quantidade de usuário no curso
+                        const query2 = "SELECT *FROM cursos WHERE nome_curso = ?"
+                        conn.query(query2, [nome_curso], (err, results)=>{
+                            if(results.length > 0){
+                                const Update2 = "UPDATE cursos SET qtd_user = qtd_user+1 WHERE nome_curso = ?"
+                                conn.query(Update2,[nome_curso], (err)=>{
+                                    console.error(err)
+                                })
+                            }
+                            else{
+                                const createUpdate2 = "INSERT INTO cursos (nome_curso, qtd_user) VALUES (?, ?)"
+                                conn.query(createUpdate2, [nome_curso, 1], (err)=>{
+                                    if(err)console.error(err)
+                                })
+                            }
+                        })
+                        //resposta na API
                         res.status(200).json({
                             response:true,
-                            message: `Cadastro realizado com sucesso. Seja bem-vindo, ${nome}`
+                            message: `Cadastro realizado com sucesso. Seja bem-vindo(a), ${nome}`
                         })
                     }
                 })
             }
-        })
-    }
-})
         })
     }
 })
