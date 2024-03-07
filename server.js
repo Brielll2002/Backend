@@ -94,8 +94,8 @@ app.post('/register', (req, res)=>{
                 })
             }
             else{
-                const sql = 'INSERT INTO user (nome, sobrenome, senha, turno, matricula, data, nome_curso, nome_unidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
-                conn.query(sql, [nome, sobrenome, senha, turno, matricula, data, nome_curso, nome_unidade], (err, results)=>{
+                const sql = 'INSERT INTO user (nome, sobrenome, senha, amigos, turno, matricula, data, nome_curso, nome_unidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+                conn.query(sql, [nome, sobrenome, senha, 0, turno, matricula, data, nome_curso, nome_unidade], (err, results)=>{
                     if(err){
                         console.error(err)
         
