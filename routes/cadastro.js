@@ -112,7 +112,7 @@ router.post('/', (req, res)=>{
                         const query2 = "SELECT *FROM cursos WHERE nome_curso = ?"
                         conn.query(query2, [nome_curso], (err, results)=>{
                             if(results.length > 0){
-                                const Update2 = "UPDATE cursos SET qtd_user = qtd_user+1 WHERE nome_curso = ?"
+                                const Update2 = "UPDATE cursos SET qtd_user = qtd_user+1, qtd_post = 0 WHERE nome_curso = ?"
                                 conn.query(Update2,[nome_curso], (err)=>{
                                     console.error(err)
                                 })
