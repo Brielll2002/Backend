@@ -118,7 +118,7 @@ router.post('/', (req, res)=>{
                                 })
                             }
                             else{
-                                const createUpdate2 = "INSERT INTO cursos (nome_curso, qtd_use, qtd_post) VALUES (?, ?, ?)"
+                                const createUpdate2 = "INSERT INTO cursos (nome_curso, qtd_user, qtd_post) VALUES (?, ?, ?)"
                                 conn.query(createUpdate2, [nome_curso, 1, 0], (err)=>{
                                     if(err)console.error(err)
                                 })
