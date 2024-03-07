@@ -140,7 +140,7 @@ app.post('/register', (req, res)=>{
                         //resposta na API
                         res.status(200).json({
                             response:true,
-                            message: `Cadastro realizado com sucesso. Seja bem-vindo(a), ${nome}`
+                            message: `Cadastro realizado com sucesso. Seja bem-vindo(a), ${nome} !`
                         })
                     }
                 })
