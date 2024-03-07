@@ -17,7 +17,7 @@ app.listen(port, (err)=>{
 
     console.log(`Aplicação rodando na porta: ${port}.`)
 })
-//teste
+
 //CADASTRO
 app.post('/register', (req, res)=>{
     const {nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade} = req.body
