@@ -102,8 +102,8 @@ router.post('/', (req, res)=>{
                                 })
                             }
                             else{
-                                const createUpdate = "INSERT INTO unidade (nome_unidade, qtd_user) VALUES (?, ?)"
-                                conn.query(createUpdate, [nome_unidade, 1], (err)=>{
+                                const createUpdate = "INSERT INTO unidade (nome_unidade, qtd_user, qtd_post) VALUES (?, ?, ?)"
+                                conn.query(createUpdate, [nome_unidade, 1, 0], (err)=>{
                                     if(err)console.error(err)
                                 })
                             }
@@ -118,8 +118,8 @@ router.post('/', (req, res)=>{
                                 })
                             }
                             else{
-                                const createUpdate2 = "INSERT INTO cursos (nome_curso, qtd_user) VALUES (?, ?)"
-                                conn.query(createUpdate2, [nome_curso, 1], (err)=>{
+                                const createUpdate2 = "INSERT INTO cursos (nome_curso, qtd_use, qtd_post) VALUES (?, ?, ?)"
+                                conn.query(createUpdate2, [nome_curso, 1, 0], (err)=>{
                                     if(err)console.error(err)
                                 })
                             }
