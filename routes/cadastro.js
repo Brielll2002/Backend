@@ -96,7 +96,7 @@ router.post('/', (req, res)=>{
                         const query = "SELECT * FROM unidade WHERE nome_unidade = ?"
                         conn.query(query, [nome_unidade], (err, results)=>{
                             if(results.length > 0){
-                                const Update = "UPDATE unidade SET qtd_user = qtd_user+1 WHERE nome_unidade = ?"
+                                const Update = "UPDATE unidade SET qtd_user = qtd_user + 1, qtd_post = 0 WHERE nome_unidade = ?"
                                 conn.query(Update,[nome_unidade],(err)=>{
                                     if(err){console.error(err)}
                                 })
