@@ -13,6 +13,9 @@ app.use(express.json())
 const cadastro = require('./routes/cadastro')
 app.use('/register', cadastro)
 
+//LOGIN
+const login = require('./routes/login')
+app.use('/login', login)
 
 //PORTA
 app.listen(port, (err)=>{
