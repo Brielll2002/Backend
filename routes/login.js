@@ -1,4 +1,4 @@
-const express =require('express')
+const express = require('express')
 const router = express.Router()
 const conn = require('../conection/conn')
 const jwt = require('jsonwebtoken')
@@ -35,7 +35,7 @@ router.post('/', (req, res)=>{
                         response: true,
                         message: "Login realizado com sucesso !",
                         user: {
-                            id: results[0].id,
+                            id: results[0].id_user,
                             nome: results[0].nome,
                             sobrenome: results[0].sobrenome,
                             amigos: results[0].amigos,

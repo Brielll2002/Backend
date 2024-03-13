@@ -17,6 +17,12 @@ app.use('/register', cadastro)
 const login = require('./routes/login')
 app.use('/login', login)
 
+//POST
+const post = require('./routes/post')
+app.use('/post', post)
+
+
+//|-----------------------------------|
 //PORTA
 app.listen(port, (err)=>{
     if(err)console.error(err)
