@@ -21,6 +21,9 @@ app.use('/login', login)
 const post = require('./routes/post')
 app.use('/post', post)
 
+//HOME
+const home = require('./routes/home')
+app.use('/home', home)
 
 //|-----------------------------------|
 //PORTA

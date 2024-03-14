@@ -4,8 +4,6 @@ const resData = new Date()
 const data = resData.toISOString().split('T')[0]
 const conn = require('../conection/conn')
 
-
-//CADASTRO
 router.post('/', (req, res)=>{
     const {nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade} = req.body
 
