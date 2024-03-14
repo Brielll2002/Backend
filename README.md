@@ -18,3 +18,9 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 - Para acessar a rota de post terá que ter um token gerado ao concluir o login
 - 
 - Necessário para concluir post: nome_usuario, nome_uidade_post, nome_curso_post, id_user_post, conteudo, imagem(opcional).
+
+---------------------------------------HOME-----------------------------------------------
+
+- ROTA API HOME: https://backend-3cga.onrender.com/home
+-
+-Para acessar a rota da home terá que ter um token gerado ao concluir o login
