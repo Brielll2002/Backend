@@ -23,4 +23,4 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 
 - ROTA API HOME: https://backend-3cga.onrender.com/home
 -
--Para acessar a rota da home terá que ter um token gerado ao concluir o login
+- Para acessar a rota da home terá que ter um token gerado ao concluir o login
