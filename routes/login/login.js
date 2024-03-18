@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const conn = require('../conection/conn')
+const conn = require('../../conection/conn')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
