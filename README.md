@@ -4,6 +4,9 @@
 - 
 - Necessário para concluir cadastro:
 nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade.
+---- api's help ----
+- API CURSOS CADASTRADOS: https://backend-3cga.onrender.com/register/cursos
+- API UNIDADES CADASTRADAS: https://backend-3cga.onrender.com/register/unidades
 
 ---------------------------------------LOGIN-----------------------------------------------
 
