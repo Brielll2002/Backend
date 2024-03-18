@@ -29,7 +29,7 @@ router.get('/',checkToken, (req, res)=>{
         }
         else{
             res.status(400).json({
-                response: false,
+                response: true,
                 message: "Ainda não existe post !"
             })
         }
