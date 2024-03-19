@@ -31,6 +31,13 @@ app.use('/post', post)
 const home = require('./routes/home/home')
 app.use('/home', home)
 
+//COMENTARIO
+const comentario = require('./routes/comentario/comentario')
+app.use('/comentario', comentario)
+
+const buscarComentario = require('./routes/comentario/buscarComentario')
+app.use('/comentario/buscar', buscarComentario)
+
 //|-----------------------------------|
 //PORTA
 app.listen(port, (err)=>{

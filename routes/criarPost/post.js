@@ -23,7 +23,7 @@ router.post('/', checkToken, (req, res)=>{
                 console.error(err)
                 res.status(400).json({
                     response: false,
-                    message: "Erro ao publicar post. Tente mais tarde !"
+                    message: "Erro ao publicar post. Tente novamente mais tarde !"
                 })
             }
             else{
