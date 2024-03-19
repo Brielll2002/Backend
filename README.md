@@ -28,3 +28,12 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 - ROTA API HOME(get): https://backend-3cga.onrender.com/home
 -
 - Para acessar a rota da home terá que ter um token gerado ao concluir o login
+
+- ------------------------------------COMENTÁRIO------------------------------------------
+
+- ROTA API COMENTARIO(post): https://backend-3cga.onrender.com/comentario
+-
+- Para acessar a rota da home terá que ter um token gerado ao concluir o login
+-
+- API's HELP
+- api comentários existente no post: https://backend-3cga.onrender.com/comentario/buscar
