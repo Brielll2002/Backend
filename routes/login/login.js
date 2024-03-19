@@ -13,6 +13,12 @@ router.post('/', (req, res)=>{
             message: "Preencha todos os campos !"
         })
     }
+    else if(matricula.length != 8){
+        res.status(400).json({
+            response: false,
+            message: "A matrícla está incorreta !"
+        })
+    }
     else{
         const sql = 'SELECT * FROM user WHERE nome = ? AND matricula = ? AND senha = ?'
         conn.query(sql, [nome, matricula, senha], (err, results)=>{
