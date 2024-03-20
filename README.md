@@ -48,4 +48,4 @@
 
 - API's HELP
 
-  api comentários existente no post: https://backend-3cga.onrender.com/comentario/buscar
+  api comentários existente no post(get): https://backend-3cga.onrender.com/comentario/buscar
