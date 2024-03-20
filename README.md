@@ -41,7 +41,10 @@
 
 
   Para acessar a rota da home terá que ter um token gerado ao concluir o login
+  
 
+  Necessário para concluir comentário: conteudo, nome, id_user_comentario, id_post_comentario.
+  
 
 - API's HELP
 
