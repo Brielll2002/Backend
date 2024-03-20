@@ -35,7 +35,7 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 
  Para acessar a rota da home terá que ter um token gerado ao concluir o login
 
-- ------------------------------------COMENTÁRIO------------------------------------------
+--------------------------------------COMENTÁRIO------------------------------------------
 
 - ROTA API COMENTARIO(post): https://backend-3cga.onrender.com/comentario
 
