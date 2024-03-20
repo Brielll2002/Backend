@@ -6,7 +6,9 @@
 nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade.
 
 - API's HELP
+
   api cursos cadastrados(get): https://backend-3cga.onrender.com/register/cursos
+
   api unidades cadastradas(get): https://backend-3cga.onrender.com/register/unidades
 
 ---------------------------------------LOGIN-----------------------------------------------
