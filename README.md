@@ -3,7 +3,7 @@
 - API PARA CADASTRO(post): https://backend-3cga.onrender.com/register
   
   Necessário para concluir cadastro:
-nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade.
+  nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade.
 
 - API's HELP
 
@@ -16,7 +16,7 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 - ROTA API LOGIN(post): https://backend-3cga.onrender.com/login
 
  
- Necessário para concluir login: nome, matricula, senha.
+  Necessário para concluir login: nome, matricula, senha.
 
 ---------------------------------------POST-----------------------------------------------
 
@@ -33,7 +33,7 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 - ROTA API HOME(get): https://backend-3cga.onrender.com/home
 
 
- Para acessar a rota da home terá que ter um token gerado ao concluir o login
+   Para acessar a rota da home terá que ter um token gerado ao concluir o login
 
 --------------------------------------COMENTÁRIO------------------------------------------
 
@@ -45,4 +45,4 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 
 - API's HELP
 
- api comentários existente no post: https://backend-3cga.onrender.com/comentario/buscar
+  api comentários existente no post: https://backend-3cga.onrender.com/comentario/buscar
