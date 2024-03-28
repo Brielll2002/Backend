@@ -2,7 +2,7 @@ const express =require('express')
 const router = express.Router()
 const conn = require('../../conection/conn') 
 
-router.get('/', (req, res)=>{
+router.get('/', async (req, res)=>{
 
     const sql = 'SELECT * FROM unidade'
 

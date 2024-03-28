@@ -4,7 +4,7 @@ const conn = require('../../conection/conn')
 require('dotenv').config()
 const checkToken = require('../../token/token')
 
-router.post('/', checkToken, (req, res)=>{
+router.post('/', checkToken, async (req, res)=>{
 
     const {id_post_comentario} = req.body
 

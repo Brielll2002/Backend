@@ -6,7 +6,7 @@ const checkToken = require('../../token/token')
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
 
-router.post('/', checkToken, (req, res)=>{
+router.post('/', checkToken, async (req, res)=>{
     const {conteudo, nome, id_user_comentario, id_post_comentario} = req.body
 
     if(!conteudo || !nome || !id_user_comentario || !id_post_comentario){

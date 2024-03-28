@@ -4,7 +4,7 @@ const conn = require('../../conection/conn')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
-router.post('/', (req, res)=>{
+router.post('/', async (req, res)=>{
     const {nome, matricula, senha} = req.body
 
     if(!nome || !matricula || !senha){

@@ -4,7 +4,7 @@ const resData = new Date()
 const data = resData.toISOString().split('T')[0]
 const conn = require('../../conection/conn')
 
-router.post('/', (req, res)=>{
+router.post('/', async (req, res)=>{
     const {nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade} = req.body
 
     if(!nome){

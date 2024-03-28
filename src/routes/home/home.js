@@ -4,7 +4,7 @@ const conn = require('../../conection/conn')
 require('dotenv').config()
 const checkToken = require('../../token/token')
 
-router.get('/',checkToken, (req, res)=>{
+router.get('/',checkToken, async (req, res)=>{
     const sql = 'SELECT * FROM post'
 
     conn.query(sql, (err, results) => {
