@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const conn = require('../../conection/conn')
 require('dotenv').config()
-const checkToken = require('../token/token')
+const checkToken = require('../../token/token')
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
 
