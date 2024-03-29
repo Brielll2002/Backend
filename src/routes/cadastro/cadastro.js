@@ -62,10 +62,10 @@ router.post('/', async (req, res)=>{
         })
     }
     else{
-        const sql = 'SELECT * FROM user WHERE nome = ? and sobrenome = ?'
+        const sql = 'SELECT * FROM user WHERE nome = ? AND sobrenome = ?'
         conn.query(sql, [nome, sobrenome], (err, results)=>{
             if(err){
-                console.log(err)
+                console.error(err)
 
                 res.status(400).json({
                     response: false,
