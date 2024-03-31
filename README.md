@@ -26,7 +26,7 @@
   Para acessar a rota de post terá que ter um token gerado ao concluir o login
 
 
-  Necessário para concluir post: nome_usuario, nome_unidade_post, nome_curso_post, id_user_post, conteudo, imagem(opcional).
+  Necessário para concluir post: nome_usuario, nome_unidade_post, nome_curso_post, id_user_post, conteudo, turno, imagem(opcional).
 
 ---------------------------------------HOME-----------------------------------------------
 
@@ -40,7 +40,7 @@
 - ROTA API COMENTARIO(post): https://backend-3cga.onrender.com/comentario
 
 
-  Para acessar a rota da home terá que ter um token gerado ao concluir o login
+  Para acessar a rota da comentario terá que ter um token gerado ao concluir o login
   
 
   Necessário para concluir comentário: conteudo, nome, id_user_comentario, id_post_comentario.
@@ -49,3 +49,11 @@
 - API's HELP
 
   api comentários existente no post(get): https://backend-3cga.onrender.com/comentario/buscar
+
+  --------------------------------------FILTRO-------------------------------------------
+
+- ROTA API FILTRO(post): https://backend-3cga.onrender.com/filtro
+ 
+  Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
+
+  Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
