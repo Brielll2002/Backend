@@ -11,21 +11,21 @@ app.use(express.json())
 ///////////
 //IMPORTS//
 ///////////
-const cadastro = require('./routes/cadastro/cadastro')
-const cursosDisponiveis = require('./routes/cadastro/cursosDisponiveis')
-const unidadesDisponiveis = require('./routes/cadastro/unidadeDisponiveis')
+const cadastro = require('./model/cadastro/cadastro')
+const cursosDisponiveis = require('./model/cadastro/cursosDisponiveis')
+const unidadesDisponiveis = require('./model/cadastro/unidadeDisponiveis')
 //
-const post = require('./routes/criarPost/post')
+const post = require('./model/criarPost/post')
 //
-const login = require('./routes/login/login')
+const login = require('./model/login/login')
 //
-const home = require('./routes/home/home')
+const home = require('./model/home/home')
 //
-const comentario = require('./routes/comentario/comentario')
+const comentario = require('./model/comentario/comentario')
 //
-const buscarComentario = require('./routes/comentario/buscarComentario')
+const buscarComentario = require('./model/comentario/buscarComentario')
 ///
-const filtro = require('./routes/filtro/filtro')
+const filtro = require('./model/filtro/filtro')
 
 ////////////
 //CADASTRO//
