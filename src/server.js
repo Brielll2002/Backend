@@ -25,7 +25,7 @@ const comentario = require('./routes/comentario/comentario')
 //
 const buscarComentario = require('./routes/comentario/buscarComentario')
 ///
-const filtro = require('./routes/unidades/filtro')
+const filtro = require('./routes/filtro/filtro')
 
 ////////////
 //CADASTRO//
@@ -50,7 +50,9 @@ app.use('/home', home)
 //////////////
 app.use('/comentario', comentario)
 app.use('/comentario/buscar', buscarComentario)
-////
+//////////
+//FILTRO//
+//////////
 app.use('/filtro', filtro)
 
 ////////////////////////////////////////////////////////////
