@@ -5,11 +5,11 @@
   Necessário para concluir cadastro:
   nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade.
 
-- API's HELP
+  - API's HELP
 
-  api cursos cadastrados(get): https://backend-3cga.onrender.com/register/cursos
+    api cursos cadastrados(get): https://backend-3cga.onrender.com/register/cursos
 
-  api unidades cadastradas(get): https://backend-3cga.onrender.com/register/unidades
+    api unidades cadastradas(get): https://backend-3cga.onrender.com/register/unidades
 
 ---------------------------------------LOGIN-----------------------------------------------
 
@@ -46,13 +46,13 @@
   Necessário para concluir comentário: conteudo, nome, id_user_comentario, id_post_comentario.
   
 
-- API's HELP
+  - API's HELP
 
-  - api comentários existente no post(post): https://backend-3cga.onrender.com/comentario/buscar
+    api comentários existente no post(post): https://backend-3cga.onrender.com/comentario/buscar
 
-  Para acessar a rota da comentario terá que ter um token gerado ao concluir o login
+    Para acessar a rota da comentario terá que ter um token gerado ao concluir o login
 
-  Necessário para concluir a busca do comentário: id_comentario_post.
+    Necessário para concluir a busca do comentário: id_comentario_post.
 
   
 
