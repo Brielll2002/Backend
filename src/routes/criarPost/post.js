@@ -7,9 +7,9 @@ const resData = new Date()
 const data = resData.toISOString().split('T')[0]
 
 router.post('/', checkToken, async (req, res)=>{
-    const {imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post} = req.body
+    const {imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, turno} = req.body
 
-    if(!nome_usuario || !nome_unidade_post || !nome_curso_post || !id_user_post || !conteudo){
+    if(!nome_usuario || !nome_unidade_post || !nome_curso_post || !id_user_post || !conteudo || !turno){
         res.status(400).json({
             response: false,
             message: "Dados importante estão faltando para a criação do post !"
