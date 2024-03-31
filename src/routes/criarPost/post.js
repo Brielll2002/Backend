@@ -16,9 +16,9 @@ router.post('/', checkToken, async (req, res)=>{
         })
     }
     else{
-        const sql = 'INSERT INTO post (imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, data) VALUES (?,?,?,?,?,?,?)'
+        const sql = 'INSERT INTO post (imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, data, turno) VALUES (?,?,?,?,?,?,?,?)'
 
-        conn.query(sql, [imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, data], (err)=>{
+        conn.query(sql, [imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, data, turno], (err)=>{
             if(err){
                 console.error(err)
                 res.status(400).json({
