@@ -52,8 +52,8 @@
 
   --------------------------------------FILTRO-------------------------------------------
 
-  - ROTA API FILTRO(post): https://backend-3cga.onrender.com/filtro
+- ROTA API FILTRO(post): https://backend-3cga.onrender.com/filtro
  
-    Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
+  Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
 
-    Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
+  Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
