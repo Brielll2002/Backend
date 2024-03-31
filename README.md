@@ -48,7 +48,7 @@
 
 - API's HELP
 
-  -api comentários existente no post(post): https://backend-3cga.onrender.com/comentario/buscar
+  - api comentários existente no post(post): https://backend-3cga.onrender.com/comentario/buscar
 
   Para acessar a rota da comentario terá que ter um token gerado ao concluir o login
 
