@@ -26,7 +26,7 @@
   Para acessar a rota de post terá que ter um token gerado ao concluir o login
 
 
-  Necessário para concluir post: nome_usuario, nome_unidade_post, nome_curso_post, id_user_post, conteudo, imagem(opcional).
+  Necessário para concluir post: nome_usuario, nome_unidade_post, nome_curso_post, id_user_post, conteudo, turno, imagem(opcional).
 
 ---------------------------------------HOME-----------------------------------------------
 
