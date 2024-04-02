@@ -1,16 +1,5 @@
 --------------------------------------CADASTRO---------------------------------------------
 
-- API PARA CADASTRO: https://backend-3cga.onrender.com/register
-- 
-- Necessário para concluir cadastro:
-nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade.
-
----------------------------------------LOGIN-----------------------------------------------
-
-- ROTA API LOGIN: https://backend-3cga.onrender.com/login
-- 
-- Necessário para concluir login: nome, matricula, senha.
-
 - API PARA CADASTRO(post): https://backend-3cga.onrender.com/register
   
   Necessário para concluir cadastro:
@@ -71,6 +60,10 @@ nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade
 
 - ROTA API FILTRO(post): https://backend-3cga.onrender.com/filtro
  
+  Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
+
+  Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
+
   Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
 
   Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
