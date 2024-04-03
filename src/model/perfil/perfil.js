@@ -32,7 +32,13 @@ router.post('/', checkToken, async (req, res)=>{
             console.error(err)
             res.status(400).json({
                 response: false,
-                message: "Erro. Dados do perfil não encontrados !"
+                message: "Erro interno. Tente novamente mais tarde !"
+            })
+        }
+        else if(results.length == 0){
+            res.status(400).json({
+                response: false,
+                message: "Dados do perfil não encontrados !"
             })
         }
         else{
