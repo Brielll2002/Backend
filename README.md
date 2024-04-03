@@ -55,8 +55,7 @@
     Necessário para concluir a busca do comentário: id_comentario_post.
 
   
-
-  --------------------------------------FILTRO-------------------------------------------
+--------------------------------------FILTRO-------------------------------------------
 
 - ROTA API FILTRO(post): https://backend-3cga.onrender.com/filtro
  
@@ -64,7 +63,11 @@
 
   Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
 
-  Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
 
-  Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
+--------------------------------------PERFIL-------------------------------------------
 
+- ROTA API PERFIL(post): https://backend-3cga.onrender.com/perfil
+
+  Para acessar a rota de perfil terá que ter um token gerado ao concluir o login
+
+  Necessário para concluir a busca do perfil: id.
