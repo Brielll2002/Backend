@@ -3,6 +3,7 @@ const router = express.Router()
 const conn = require('../../conection/conn')
 require('dotenv').config()
 const checkToken = require('../../token/token')
+const {buscarComentarios} = require('../../controller/comentario/HelpCadastroController')
 
 router.post('/', checkToken, async (req, res)=>{
 
@@ -15,9 +16,7 @@ router.post('/', checkToken, async (req, res)=>{
         })
     }
     else{
-        const sql = 'SELECT * FROM comment WHERE id_post_comentario = ?'
-
-        conn.query(sql, [id_post_comentario], (err, results)=>{
+        buscarComentarios(id_post_comentario, (err, results)=>{
             if(err){
                 console.error(err)
 

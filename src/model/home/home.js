@@ -3,13 +3,17 @@ const router = express.Router()
 const conn = require('../../conection/conn')
 require('dotenv').config()
 const checkToken = require('../../token/token')
+const {home} = require('../../controller/home/HomeController')
 
 router.get('/',checkToken, async (req, res)=>{
-    const sql = 'SELECT * FROM post'
-
-    conn.query(sql, (err, results) => {
-        if(err)console.error(err)
-
+    home((err, results) => {
+        if(err){
+            console.error(err)
+            res.status(400).json({
+                response: false,
+                message: "Erro interno. Tente novamente mais tarde !"
+            })
+        }
         else if(results.length > 0){
             const post = results.map(post => ({
                 id_post: post.id_post,
