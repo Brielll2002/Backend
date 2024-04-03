@@ -22,10 +22,11 @@ const login = require('./model/login/login')
 const home = require('./model/home/home')
 //
 const comentario = require('./model/comentario/comentario')
-//
 const buscarComentario = require('./model/comentario/buscarComentario')
-///
+//
 const filtro = require('./model/filtro/filtro')
+//
+const perfil = require('./model/perfil/perfil')
 
 ////////////
 //CADASTRO//
@@ -54,6 +55,10 @@ app.use('/comentario/buscar', buscarComentario)
 //FILTRO//
 //////////
 app.use('/filtro', filtro)
+//////////
+//PERFIL//
+//////////
+app.use('/perfil', perfil)
 
 ////////////////////////////////////////////////////////////
 //PORTA

@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const conn = require('../../conection/conn')
+const checkToken = require('../../token/token')
 
 
-router.post('/', async (req, res)=>{
-    const id = req.body
+router.post('/', checkToken, async (req, res)=>{
+    const {id} = req.body
     const sql = 'SELECT * FROM post WHERE id_user_post = ?'
     const sql2 = 'SELECT * FROM user WHERE id_user = ?'
 
@@ -12,10 +13,6 @@ router.post('/', async (req, res)=>{
     conn.query(sql, [id], (err, results)=>{
         if(err){
             console.error(err)
-            res.status(400).json({
-                responde: false,
-                message: "Erro. Dados não encontrados!"
-            })
         }
         else{
             posts = results.map((post)=>({
@@ -35,7 +32,7 @@ router.post('/', async (req, res)=>{
             console.error(err)
             res.status(400).json({
                 response: false,
-                message: "Erro. Dados do perfil não encontrado !"
+                message: "Erro. Dados do perfil não encontrados !"
             })
         }
         else{
@@ -43,7 +40,6 @@ router.post('/', async (req, res)=>{
                 id_user: dados.id_user,
                 nome: dados.nome,
                 sobrenome: dados.sobrenome,
-                senha: dados.senha,
                 amigos: dados.amigo,
                 turno: dados.turno,
                 matricula: dados.matricula,
@@ -54,10 +50,12 @@ router.post('/', async (req, res)=>{
 
             res.status(200).json({
                 response: true,
-                message: "Perfil completo formado.",
-                perfil: dados,
+                message: `Seja bem-vindo(a) ao seu perfil, ${dados[0].nome} !`,
+                perfil: dados[0],
                 posts: posts
             })
         }
     })
 })
+
+module.exports = router
