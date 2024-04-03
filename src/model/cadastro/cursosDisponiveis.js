@@ -1,11 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const conn = require('../../conection/conn')
+const {cursosDisponiveis} = require('../../controller/cadastro/HelpCadastroController')
 
 router.get('/', async (req, res)=>{
-    const sql = 'SELECT * FROM cursos'
-
-    conn.query(sql, (err, results)=>{
+    cursosDisponiveis(function(err, results){
         if(err){
             console.error(err)
 
