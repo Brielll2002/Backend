@@ -43,6 +43,12 @@ router.post('/', async (req, res)=>{
             message:"Preencha todos os campos !"
         })
     }
+    else if(matricula.length != 8){
+        res.status(400).json({
+            response:false,
+            message:"A matrícula está errada !"
+        })
+    }
     else if(!nome_curso){
         res.status(400).json({
             response:false,
