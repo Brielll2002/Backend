@@ -5,6 +5,7 @@ require('dotenv').config()
 const checkToken = require('../../token/token')
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
+const {postarComentario} = require('../../controller/comentario/ComentarioController')
 
 router.post('/', checkToken, async (req, res)=>{
     const {conteudo, nome, id_user_comentario, id_post_comentario} = req.body
@@ -16,9 +17,7 @@ router.post('/', checkToken, async (req, res)=>{
         })
     }
     else{
-        const sql = 'INSERT INTO comment (conteudo, data, nome, id_user_comentario, id_post_comentario) VALUES (?,?,?,?,?)'
-
-        conn.query(sql, [conteudo, data, nome, id_user_comentario, id_post_comentario], (err, results)=>{
+        postarComentario(conteudo, data, nome, id_user_comentario, id_post_comentario, (err, results)=>{
             if(err){
                 console.error(err)
 
