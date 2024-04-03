@@ -1,12 +1,10 @@
 const express =require('express')
 const router = express.Router()
-const conn = require('../../conection/conn') 
+const {unidadesDisponiveis} = require('../../controller/cadastro/HelpCadastroController') 
 
 router.get('/', async (req, res)=>{
 
-    const sql = 'SELECT * FROM unidade'
-
-    conn.query(sql, (err, results)=>{
+    unidadesDisponiveis(function(err, results){
         if(err){
             console.error(err)
 
