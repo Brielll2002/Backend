@@ -35,7 +35,28 @@ router.post('/', async (req, res)=>{
             console.error(err)
             res.status(400).json({
                 response: false,
-                message: ""
+                message: "Erro. Dados do perfil não encontrado !"
+            })
+        }
+        else{
+            const dados = results.map((dados)=>({
+                id_user: dados.id_user,
+                nome: dados.nome,
+                sobrenome: dados.sobrenome,
+                senha: dados.senha,
+                amigos: dados.amigo,
+                turno: dados.turno,
+                matricula: dados.matricula,
+                data: dados.data,
+                nome_curso: dados.nome_curso,
+                nome_unidade:dados.nome_unidade
+            }))
+
+            res.status(200).json({
+                response: true,
+                message: "Perfil completo formado.",
+                perfil: dados,
+                posts: posts
             })
         }
     })
