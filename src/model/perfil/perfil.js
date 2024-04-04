@@ -4,8 +4,8 @@ const conn = require('../../conection/conn')
 const checkToken = require('../../token/token')
 
 
-router.post('/', checkToken, async (req, res)=>{
-    const {id} = req.body
+router.get('/:id', checkToken, async (req, res)=>{
+    const id = req.params.id
     const sql = 'SELECT * FROM post WHERE id_user_post = ?'
     const sql2 = 'SELECT * FROM user WHERE id_user = ?'
 

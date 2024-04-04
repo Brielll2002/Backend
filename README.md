@@ -66,8 +66,8 @@
 
 --------------------------------------PERFIL-------------------------------------------
 
-- ROTA API PERFIL(post): https://backend-3cga.onrender.com/perfil
+- ROTA API PERFIL(get): https://backend-3cga.onrender.com/perfil
 
   Para acessar a rota de perfil terá que ter um token gerado ao concluir o login
 
-  Necessário para concluir a busca do perfil: id.
+  Necessário para concluir a busca do perfil: perfil/:id.
