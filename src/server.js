@@ -15,7 +15,8 @@ const cadastro = require('./model/cadastro/cadastro')
 const cursosDisponiveis = require('./model/cadastro/cursosDisponiveis')
 const unidadesDisponiveis = require('./model/cadastro/unidadeDisponiveis')
 //
-const post = require('./model/criarPost/post')
+const post = require('./model/post/post')
+const delPost = require('./model/post/excluirPost')
 //
 const login = require('./model/login/login')
 //
@@ -42,6 +43,7 @@ app.use('/login', login)
 //POSTS//
 /////////
 app.use('/post', post)
+app.use('/post/delete', delPost)
 ////////
 //HOME//
 ////////
