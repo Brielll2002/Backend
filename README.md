@@ -20,13 +20,21 @@
 
 ---------------------------------------POST-----------------------------------------------
 
-- ROTA API POST(post): https://backend-3cga.onrender.com/post
+- ROTA API  CRIAR POST(post): https://backend-3cga.onrender.com/post
 
 
   Para acessar a rota de post terá que ter um token gerado ao concluir o login
 
 
   Necessário para concluir post: nome_usuario, nome_unidade_post, nome_curso_post, id_user_post, conteudo, turno, imagem(opcional).
+
+- ROTA API DELETAR POST(delete): https://backend-3cga.onrender.com/post/delete/:id
+
+
+  Para acessar a rota de post terá que ter um token gerado ao concluir o login
+
+
+  Necessário para deletar o post: post/delete/:id.
 
 ---------------------------------------HOME-----------------------------------------------
 
@@ -66,7 +74,7 @@
 
 --------------------------------------PERFIL-------------------------------------------
 
-- ROTA API PERFIL(get): https://backend-3cga.onrender.com/perfil
+- ROTA API PERFIL(get): https://backend-3cga.onrender.com/perfil/:id
 
   Para acessar a rota de perfil terá que ter um token gerado ao concluir o login
 

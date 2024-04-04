@@ -1,11 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const conn = require('../../conection/conn')
 require('dotenv').config()
 const checkToken = require('../../token/token')
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
-const {criarPost, mudarQuantidadeDePostEmUnidades, mudarQuantidadeDePostEmCurso} = require('../../controller/criarPost/PostController')
+const {criarPost, mudarQuantidadeDePostEmUnidades, mudarQuantidadeDePostEmCurso} = require('../../controller/post/PostController')
 
 router.post('/', checkToken, async (req, res)=>{
     const {imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, turno} = req.body

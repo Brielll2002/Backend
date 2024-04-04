@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const conn = require('../../conection/conn')
 require('dotenv').config()
 const checkToken = require('../../token/token')
 const {buscarComentarios} = require('../../controller/comentario/HelpCadastroController')
