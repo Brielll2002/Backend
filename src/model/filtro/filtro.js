@@ -3,7 +3,8 @@ const router = express.Router()
 const checkToken = require('../../token/token')
 const {filtro} = require('../../controller/filtro/FiltroController')
 
-router.get('/', checkToken,async (req, res)=>{
+router.get('/:pg', checkToken,async (req, res)=>{
+    const pagina = req.params.pg
     const {nome_unidade_post,nome_curso_post,turno} = req.body
 
     filtro(nome_unidade_post, nome_curso_post, turno, (err, results)=>{
@@ -28,10 +29,39 @@ router.get('/', checkToken,async (req, res)=>{
                     turno: filtrar.turno
                 }))
             
-                res.status(200).json({
-                    response: true,
-                    posts: filtrar.reverse()
-                })
+                let paginas = [];
+                const reverse = filtrar.reverse();
+                let arr = [];
+                let count = 0;
+                const base = 4;
+
+                for(let c = 0; c < reverse.length; c++){
+                    if(c == (count + base)){
+                        paginas.push(arr)
+                        count = c
+                        arr=[]
+                    }
+                    else{
+                        arr.push(reverse[c])
+                    }
+                }
+
+                if(Number(pagina) < 1 || Number(pagina) > paginas.length){
+                    res.status(400).json({
+                        response: false,
+                        message: "Número de página errada. Verifique e tente novamente !",
+                        primeriapag: paginas.length > 0 ? 1 : 0,
+                        qtdpag: paginas.length
+                    })
+                }
+                else{
+                    res.status(200).json({
+                        response: true,
+                        qtdpag: paginas.length,
+                        pagatual: Number(pagina),
+                        posts: paginas[Number(pagina)-1]
+                    })
+                }
             }
             else{
                 res.status(400).json({

@@ -70,11 +70,13 @@
   
 --------------------------------------FILTRO-------------------------------------------
 
-- ROTA API FILTRO(get): https://backend-3cga.onrender.com/filtro
+- ROTA API FILTRO(get): https://backend-3cga.onrender.com/filtro/:pg
  
   Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
 
-  Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno.
+  Necessário para concluir o filtro: nome_unidade_post, nome_curso_post, turno, filtro/:pg(params).
+
+  obs: A ':pg'(página) é referente ao esquema de paginação, usado para não enviar muitos dados de uma vez na api.
 
 
 --------------------------------------PERFIL-------------------------------------------

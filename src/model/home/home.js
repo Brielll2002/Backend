@@ -50,7 +50,7 @@ router.get('/:pg',checkToken, async (req, res)=>{
                 res.status(400).json({
                     response: false,
                     message: "Número de página errada. Verifique e tente novamente !",
-                    primeriapag: 1,
+                    primeriapag: paginas.length > 0 ? 1 : 0,
                     qtdpag: paginas.length
                 })
             }
