@@ -65,7 +65,7 @@
 
     Para acessar a rota de buscar comentario terá que ter um token gerado ao concluir o login
 
-    Necessário para concluir a busca do comentário: id_comentario_post.
+    Necessário para concluir a busca do comentário: id_post_comentario.
 
   
 --------------------------------------FILTRO-------------------------------------------
