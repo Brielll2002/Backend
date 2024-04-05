@@ -61,7 +61,7 @@
 
   - API's HELP
 
-    api comentários existente no post(post): https://backend-3cga.onrender.com/comentario/buscar
+    api comentários existente no post(get): https://backend-3cga.onrender.com/comentario/buscar
 
     Para acessar a rota de buscar comentario terá que ter um token gerado ao concluir o login
 
@@ -70,7 +70,7 @@
   
 --------------------------------------FILTRO-------------------------------------------
 
-- ROTA API FILTRO(post): https://backend-3cga.onrender.com/filtro
+- ROTA API FILTRO(get): https://backend-3cga.onrender.com/filtro
  
   Para acessar a rota da filtro terá que ter um token gerado ao concluir o login
 

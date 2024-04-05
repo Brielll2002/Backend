@@ -4,7 +4,7 @@ require('dotenv').config()
 const checkToken = require('../../token/token')
 const {buscarComentarios} = require('../../controller/comentario/HelpCadastroController')
 
-router.post('/', checkToken, async (req, res)=>{
+router.get('/', checkToken, async (req, res)=>{
 
     const {id_post_comentario} = req.body
 

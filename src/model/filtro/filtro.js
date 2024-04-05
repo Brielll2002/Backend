@@ -3,7 +3,7 @@ const router = express.Router()
 const checkToken = require('../../token/token')
 const {filtro} = require('../../controller/filtro/FiltroController')
 
-router.post('/', checkToken,async (req, res)=>{
+router.get('/', checkToken,async (req, res)=>{
     const {nome_unidade_post,nome_curso_post,turno} = req.body
 
     filtro(nome_unidade_post, nome_curso_post, turno, (err, results)=>{
