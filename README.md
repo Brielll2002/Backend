@@ -38,10 +38,15 @@
 
 ---------------------------------------HOME-----------------------------------------------
 
-- ROTA API HOME(get): https://backend-3cga.onrender.com/home
+- ROTA API HOME(get): https://backend-3cga.onrender.com/home/:pg
 
 
-   Para acessar a rota da home terá que ter um token gerado ao concluir o login
+  Para acessar a rota da home terá que ter um token gerado ao concluir o login
+  
+
+  Necessário para concluir a busca dos posts da home: home/:pg.
+
+  obs: A ':pg'(página) é referente ao esquema de paginação, usado para não enviar muitos dados de uma vez na api.
 
 --------------------------------------COMENTÁRIO------------------------------------------
 
