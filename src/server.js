@@ -28,6 +28,7 @@ const buscarComentario = require('./model/comentario/buscarComentario')
 const filtro = require('./model/filtro/filtro')
 //
 const perfil = require('./model/perfil/perfil')
+const editarPerfil = require('./model/perfil/editarPerfil')
 
 ////////////
 //CADASTRO//
@@ -61,6 +62,7 @@ app.use('/filtro', filtro)
 //PERFIL//
 //////////
 app.use('/perfil', perfil)
+app.use('/perfil/editar', editarPerfil)
 
 ////////////////////////////////////////////////////////////
 //PORTA
