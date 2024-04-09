@@ -59,13 +59,11 @@
   Necessário para concluir comentário: conteudo, nome, id_user_comentario, id_post_comentario.
   
 
-  - API's HELP
+- API COMENTÁRIOS EXISTENTES(get): https://backend-3cga.onrender.com/comentario/buscar
 
-    api comentários existente no post(get): https://backend-3cga.onrender.com/comentario/buscar
+  Para acessar a rota de buscar comentario terá que ter um token gerado ao concluir o login
 
-    Para acessar a rota de buscar comentario terá que ter um token gerado ao concluir o login
-
-    Necessário para concluir a busca do comentário: id_post_comentario.
+  Necessário para concluir a busca do comentário: id_post_comentario.
 
   
 --------------------------------------FILTRO-------------------------------------------
