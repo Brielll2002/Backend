@@ -20,7 +20,7 @@ router.post('/', checkToken, async (req, res)=>{
             if(err){
                 console.error(err)
 
-                res.status(400).json({
+                res.status(500).json({
                     response: false,
                     message: "Erro ao publiucar comentário. Tente novamente mais tarde !"
                 })

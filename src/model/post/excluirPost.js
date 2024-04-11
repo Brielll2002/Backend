@@ -8,6 +8,10 @@ router.delete('/:id', checkToken, async (req, res)=>{
     excluirPost(id, function(err){
         if(err){
             console.error(err)
+            res.status(500).json({
+                response: false,
+                message: "Erro interno. Tente novamente mais tarde !"
+            })
         }
     })
 })

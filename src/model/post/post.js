@@ -19,7 +19,7 @@ router.post('/', checkToken, async (req, res)=>{
         criarPost(imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, data, turno, function(err){
             if(err){
                 console.error(err)
-                res.status(400).json({
+                res.status(500).json({
                     response: false,
                     message: "Erro ao publicar post. Tente novamente mais tarde !"
                 })

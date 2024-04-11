@@ -23,7 +23,7 @@ router.put('/:id', checkToken, async(req, res)=>{
         editarPerfil(senha, turno, matricula, nome_curso, nome_unidade, id, function(err, results){
             if(err){
                 console.error(err)
-                res.status(400).json({
+                res.status(500).json({
                     response: false,
                     message: "Erro interno. Tente novamente mais tarde !"
                 })

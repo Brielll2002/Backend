@@ -23,6 +23,10 @@ router.post('/', async (req, res)=>{
         pesquisarUsuario(nome, matricula, senha, function(err, results){
             if(err){
                 console.error(err)
+                res.status(500).json({
+                    response: false,
+                    message: "Erro interno. Tente novamente mais tarde !"
+                })
             }
             else if(results && results.length > 0){
                 const secretKey = jwt.sign('12h', process.env.SECRETKEY)
