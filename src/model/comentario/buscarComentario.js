@@ -19,7 +19,7 @@ router.get('/:id', checkToken, async (req, res)=>{
             if(err){
                 console.error(err)
 
-                res.status(400).json({
+                res.status(500).json({
                     response: false,
                     message: "Erro ao procurar respostas. Tente novamente mais tarde !"                
                 })

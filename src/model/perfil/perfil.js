@@ -9,7 +9,7 @@ router.get('/:id', checkToken, async (req, res)=>{
     perfil(id, (err, results)=>{
         if(err){
             console.error(err)
-            res.status(400).json({
+            res.status(500).json({
                 response: false,
                 message: "Erro interno. Tente novamente mais tarde !"
             })

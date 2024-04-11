@@ -18,7 +18,7 @@ router.get('/:pg', checkToken,async (req, res)=>{
             if(err){
                 console.error(err)
     
-                res.status(400).json({
+                res.status(500).json({
                     response: false,
                     message: 'Ocorreu um erro, por favor tente mais tarde !'
                 })
