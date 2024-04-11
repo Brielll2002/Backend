@@ -4,9 +4,9 @@ require('dotenv').config()
 const checkToken = require('../../token/token')
 const {buscarComentarios} = require('../../controller/comentario/HelpCadastroController')
 
-router.get('/', checkToken, async (req, res)=>{
+router.get('/:id', checkToken, async (req, res)=>{
 
-    const {id_post_comentario} = req.body
+    const id_post_comentario = req.params.id
 
     if(!id_post_comentario){
         res.status(400).json({
