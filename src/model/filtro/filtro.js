@@ -7,7 +7,14 @@ router.get('/:pg', checkToken,async (req, res)=>{
     const pagina = req.params.pg
     const {nome_unidade_post,nome_curso_post,turno} = req.body
 
-    filtro(nome_unidade_post, nome_curso_post, turno, (err, results)=>{
+    if((turno && !nome_curso_post) || (turno && !nome_unidade_post) || (nome_curso_post && !nome_unidade_post)){
+        res.status(400).json({
+            response: false,
+            alert: "Para conseguir filtrar deve seguir a ordem: nome_unidade_post -> nome_curso_post -> turno."
+        })
+    }
+    else{
+        filtro(nome_unidade_post, nome_curso_post, turno, (err, results)=>{
             if(err){
                 console.error(err)
     
@@ -16,6 +23,7 @@ router.get('/:pg', checkToken,async (req, res)=>{
                     message: 'Ocorreu um erro, por favor tente mais tarde !'
                 })
             }
+            
             if(results.length > 0){
                 const filtrar = results.map(filtrar =>({
                     id_post: filtrar.id_post,
@@ -70,6 +78,7 @@ router.get('/:pg', checkToken,async (req, res)=>{
                 })
             }
         })
+    }
     }   
 )
 module.exports = router
