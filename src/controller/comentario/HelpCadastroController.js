@@ -7,7 +7,7 @@ function buscarComentarios(id_post_comentario, callback){
             return callback(err, null)
         }
         else{
-            return(callback(null, results))
+            return callback(null, results)
         }
     })
 }
