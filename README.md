@@ -83,10 +83,10 @@
 
   Para acessar a rota de perfil terá que ter um token gerado ao concluir o login
 
-  Necessário para concluir a busca do perfil: perfil/:id.
+  Necessário para concluir a busca do perfil: perfil/:id.(id usuario)
   
 - ROTA API EDITAR PERFIL(put): https://backend-3cga.onrender.com/perfil/editar/:id
 
   Para acessar a rota de perfil terá que ter um token gerado ao concluir o login
 
-  Necessário para concluir a atualização do perfil: editar/:id(params), senha, turno, matricula, nome_curso, nome_unidade.
+  Necessário para concluir a atualização do perfil: editar/:id(id usuario), senha, turno, matricula, nome_curso, nome_unidade.
