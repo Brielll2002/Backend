@@ -34,7 +34,7 @@
   Para acessar a rota de post terá que ter um token gerado ao concluir o login
 
 
-  Necessário para deletar o post: post/delete/:id.
+  Necessário para deletar o post: post/delete/:id.(id do post)
 
 ---------------------------------------HOME-----------------------------------------------
 
