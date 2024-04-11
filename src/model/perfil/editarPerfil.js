@@ -10,7 +10,7 @@ router.put('/:id', checkToken, async(req, res)=>{
     if(!senha || !turno || !matricula || !nome_curso || !nome_unidade){
         res.status(400).json({
             response: false,
-            message: "Todos os campos devem ser preenchidos para concluir a atualização. Caso não queria atualizar um campo, coloque seu valor atual."
+            alert: "Todos os campos devem ser preenchidos para concluir a atualização. Caso não queria atualizar um campo, coloque seu valor atual."
         })
     }
     else if(matricula.length != 8){
