@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 require('dotenv').config()
 const checkToken = require('../../token/token')
-const {buscarComentarios} = require('../../controller/comentario/HelpCadastroController')
+const {buscarComentarios} = require('../../controller/comentario/BuscarComentarioController')
 
 router.get('/:id', checkToken, async (req, res)=>{
 
