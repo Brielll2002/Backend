@@ -114,7 +114,7 @@ function editarPerfil(senha, turno, matricula, nome_curso, nome_unidade,id,callb
             }
         })
     })
-    
+
 }
 
 module.exports = {editarPerfil}
