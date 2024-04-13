@@ -11,24 +11,24 @@ app.use(express.json())
 ///////////
 //IMPORTS//
 ///////////
-const cadastro = require('./model/cadastro/cadastro')
-const cursosDisponiveis = require('./model/cadastro/cursosDisponiveis')
-const unidadesDisponiveis = require('./model/cadastro/unidadeDisponiveis')
+const cadastro = require('./controller/cadastro/cadastro')
+const cursosDisponiveis = require('./controller/cadastro/cursosDisponiveis')
+const unidadesDisponiveis = require('./controller/cadastro/unidadeDisponiveis')
 //
-const post = require('./model/post/post')
-const delPost = require('./model/post/excluirPost')
+const post = require('./controller/post/post')
+const delPost = require('./controller/post/excluirPost')
 //
-const login = require('./model/login/login')
+const login = require('./controller/login/login')
 //
-const home = require('./model/home/home')
+const home = require('./controller/home/home')
 //
-const comentario = require('./model/comentario/comentario')
-const buscarComentario = require('./model/comentario/buscarComentario')
+const comentario = require('./controller/comentario/comentario')
+const buscarComentario = require('./controller/comentario/buscarComentario')
 //
-const filtro = require('./model/filtro/filtro')
+const filtro = require('./controller/filtro/filtro')
 //
-const perfil = require('./model/perfil/perfil')
-const editarPerfil = require('./model/perfil/editarPerfil')
+const perfil = require('./controller/perfil/perfil')
+const editarPerfil = require('./controller/perfil/editarPerfil')
 
 ////////////
 //CADASTRO//

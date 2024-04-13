@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const checkToken = require('../../token/token')
-const {perfil} = require('../../controller/perfil/PerfilController')
+const {perfil} = require('../../model/perfil/PerfilModel')
 
 
 router.get('/:id', checkToken, async (req, res)=>{

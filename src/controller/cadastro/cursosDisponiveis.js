@@ -1,10 +1,9 @@
-const express =require('express')
+const express = require('express')
 const router = express.Router()
-const {unidadesDisponiveis} = require('../../controller/cadastro/HelpCadastroController') 
+const {cursosDisponiveis} = require('../../model/cadastro/HelpCadastroModel')
 
 router.get('/', async (req, res)=>{
-
-    unidadesDisponiveis(function(err, results){
+    cursosDisponiveis(function(err, results){
         if(err){
             console.error(err)
 
@@ -16,22 +15,21 @@ router.get('/', async (req, res)=>{
         else if(results.length == 0){
             res.status(200).json({
                 response: true,
-                message: "Ainda não há unidade cadastrada, adicione a sua unidade !"
+                message: "Ainda não há curso cadastrado, adicione o seu curso !"
             })
         }
         else{
-            const unidades = results.map(unidade => ({
-                id_unidade: unidade.id_unidade,
-                nome_unidade: unidade.nome_unidade
+            const cursos = results.map(cursos => ({
+                id_curso: cursos.id_curso,
+                nome_curso: cursos.nome_curso
             }))
 
             res.status(200).json({
                 response: true,
-                unidades: unidades
+                cursos: cursos
             })
         }
     })
-
 })
 
 module.exports = router

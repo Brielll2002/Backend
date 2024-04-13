@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const checkToken = require('../../token/token')
-const {editarPerfil} = require('../../controller/perfil/EditarPerfilController')
+const {editarPerfil} = require('../../model/perfil/EditarPerfilModel')
 
 router.put('/:id', checkToken, async(req, res)=>{
     const id = req.params.id
