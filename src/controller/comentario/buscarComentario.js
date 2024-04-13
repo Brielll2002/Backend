@@ -37,7 +37,7 @@ router.get('/:id', checkToken, async (req, res)=>{
 
                     res.status(200).json({
                         response: true,
-                        respostas: comentarios
+                        comentarios: comentarios
                     })
                 }
                 else{
