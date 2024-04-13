@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
-const {pesquisarUsuario} = require('../../controller/login/LoginController')
+const {pesquisarUsuario} = require('../../model/login/LoginModel')
 
 router.post('/', async (req, res)=>{
     const {nome, matricula, senha} = req.body

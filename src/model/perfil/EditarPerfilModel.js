@@ -1,9 +1,9 @@
 const conn = require('../../conection/conn')
-const {perfil} = require('./PerfilController')
+const {perfil} = require('./PerfilModel')
 const {
     atualizacaoQuantidadeDeUsuarioNaUnidade, 
     atualizacaoQuantidadeDeUsuarioNoCurso
-} = require('../cadastro/CadastroController')
+} = require('../cadastro/CadastroModel')
 
 function diminuirQuantidadeDeUsuarioNaUnidade(nome_unidade, callback){
     const query = "SELECT * FROM unidade WHERE nome_unidade = ?"

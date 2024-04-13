@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
-const {verificarExistenciaUsuario, inserirUsuarioNoBancoDeDados, atualizacaoQuantidadeDeUsuarioNaUnidade, atualizacaoQuantidadeDeUsuarioNoCurso} = require('../../controller/cadastro/CadastroController')
+const {verificarExistenciaUsuario, inserirUsuarioNoBancoDeDados, atualizacaoQuantidadeDeUsuarioNaUnidade, atualizacaoQuantidadeDeUsuarioNoCurso} = require('../../model/cadastro/CadastroModel')
 
 router.post('/', async (req, res)=>{
     const {nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade} = req.body

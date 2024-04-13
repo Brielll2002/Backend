@@ -4,7 +4,7 @@ require('dotenv').config()
 const checkToken = require('../../token/token')
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
-const {postarComentario} = require('../../controller/comentario/ComentarioController')
+const {postarComentario} = require('../../model/comentario/ComentarioModel')
 
 router.post('/', checkToken, async (req, res)=>{
     const {conteudo, nome, id_user_comentario, id_post_comentario} = req.body

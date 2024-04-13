@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const checkToken = require('../../token/token')
-const {filtro} = require('../../controller/filtro/FiltroController')
+const {filtro} = require('../../model/filtro/FiltroModel')
 
 router.get('/:pg', checkToken,async (req, res)=>{
     const pagina = req.params.pg

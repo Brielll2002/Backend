@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 require('dotenv').config()
 const checkToken = require('../../token/token')
-const {home} = require('../../controller/home/HomeController')
+const {home} = require('../../model/home/HomeModel')
 
 router.get('/:pg',checkToken, async (req, res)=>{
 
