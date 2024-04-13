@@ -1,11 +1,11 @@
 --------------------------------------CADASTRO---------------------------------------------
 
-- API PARA CADASTRO(post): https://backend-3cga.onrender.com/register
+- ROTA API PARA CADASTRO(post): https://backend-3cga.onrender.com/register
   
   Necessário para concluir cadastro:
   nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade.
 
-  - API's HELP
+  - ROTA API's HELP
 
     api cursos cadastrados(get): https://backend-3cga.onrender.com/register/cursos
 
