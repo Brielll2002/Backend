@@ -1,10 +1,11 @@
 const express = require('express')
-const router = express.Router()
+const app = express()
+app.use(express.json())
 require('dotenv').config()
-const checkToken = require('../../token/token')
+const {checkToken} = require('../../token/token')
 const {home} = require('../../model/home/HomeModel')
 
-router.get('/:pg',checkToken, async (req, res)=>{
+app.get('/:pg',checkToken, async (req, res)=>{
 
     const pagina = req.params.pg
 
@@ -64,7 +65,7 @@ router.get('/:pg',checkToken, async (req, res)=>{
             }
         }
         else{
-            res.status(400).json({
+            res.status(200).json({
                 response: false,
                 message: "Ainda não existe post !"
             })
@@ -72,4 +73,4 @@ router.get('/:pg',checkToken, async (req, res)=>{
     })
 })
 
-module.exports = router
+module.exports = app

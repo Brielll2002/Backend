@@ -1,8 +1,8 @@
 const express =require('express')
-const router = express.Router()
+const app = express()
 const {unidadesDisponiveis} = require('../../model/cadastro/HelpCadastroModel') 
 
-router.get('/', async (req, res)=>{
+app.get('/', async (req, res)=>{
 
     unidadesDisponiveis(function(err, results){
         if(err){
@@ -34,4 +34,4 @@ router.get('/', async (req, res)=>{
 
 })
 
-module.exports = router
+module.exports = app

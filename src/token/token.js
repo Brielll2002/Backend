@@ -22,4 +22,13 @@ function checkToken(req, res, next){
     }
 }
 
-module.exports = checkToken
+function gerarToken(id){
+    const secretKey = jwt.sign('12h', process.env.SECRETKEY)
+    const token = jwt.sign(
+        {id: id},
+        secretKey
+    )
+    return token
+}
+
+module.exports = {checkToken, gerarToken}

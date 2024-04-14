@@ -1,8 +1,8 @@
 const express = require('express')
-const router = express.Router()
+const app = express()
 const {cursosDisponiveis} = require('../../model/cadastro/HelpCadastroModel')
 
-router.get('/', async (req, res)=>{
+app.get('/', async (req, res)=>{
     cursosDisponiveis(function(err, results){
         if(err){
             console.error(err)
@@ -32,4 +32,4 @@ router.get('/', async (req, res)=>{
     })
 })
 
-module.exports = router
+module.exports = app

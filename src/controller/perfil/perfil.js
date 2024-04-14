@@ -1,10 +1,10 @@
 const express = require('express')
-const router = express.Router()
-const checkToken = require('../../token/token')
+const app = express()
+const {checkToken} = require('../../token/token')
 const {perfil} = require('../../model/perfil/PerfilModel')
 
 
-router.get('/:id', checkToken, async (req, res)=>{
+app.get('/:id', checkToken, async (req, res)=>{
     const id = req.params.id
     perfil(id, (err, results)=>{
         if(err){
@@ -25,4 +25,4 @@ router.get('/:id', checkToken, async (req, res)=>{
     })
 })
 
-module.exports = router
+module.exports = app

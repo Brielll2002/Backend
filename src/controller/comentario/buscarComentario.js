@@ -1,10 +1,10 @@
 const express = require('express')
-const router = express.Router()
+const app = express()
 require('dotenv').config()
-const checkToken = require('../../token/token')
+const {checkToken} = require('../../token/token')
 const {buscarComentarios} = require('../../model/comentario/BuscarComentarioModel')
 
-router.get('/:id', checkToken, async (req, res)=>{
+app.get('/:id', checkToken, async (req, res)=>{
 
     const id_post_comentario = req.params.id
 
@@ -51,4 +51,4 @@ router.get('/:id', checkToken, async (req, res)=>{
     }
 })
 
-module.exports = router
+module.exports = app

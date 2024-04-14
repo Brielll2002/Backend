@@ -1,9 +1,9 @@
 const express = require('express')
-const router = express.Router()
-const checkToken = require('../../token/token')
+const app = express()
+const {checkToken} = require('../../token/token')
 const {excluirPost} = require('../../model/post/ExcluirPostModel')
 
-router.delete('/:id', checkToken, async (req, res)=>{
+app.delete('/:id', checkToken, async (req, res)=>{
     const id = req.params.id
     excluirPost(id, function(err){
         if(err){
@@ -16,4 +16,4 @@ router.delete('/:id', checkToken, async (req, res)=>{
     })
 })
 
-module.exports = router
+module.exports = app

@@ -1,9 +1,9 @@
 const express = require('express')
-const router = express.Router()
-const checkToken = require('../../token/token')
+const app = express()
+const {checkToken} = require('../../token/token')
 const {filtro} = require('../../model/filtro/FiltroModel')
 
-router.get('/:pg', checkToken,async (req, res)=>{
+app.get('/:pg', checkToken,async (req, res)=>{
     const pagina = req.params.pg
     const {nome_unidade_post,nome_curso_post,turno} = req.body
 
@@ -81,4 +81,4 @@ router.get('/:pg', checkToken,async (req, res)=>{
     }
     }   
 )
-module.exports = router
+module.exports = app

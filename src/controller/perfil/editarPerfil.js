@@ -1,9 +1,9 @@
 const express = require('express')
-const router = express.Router()
-const checkToken = require('../../token/token')
+const app = express()
+const {checkToken} = require('../../token/token')
 const {editarPerfil} = require('../../model/perfil/EditarPerfilModel')
 
-router.put('/:id', checkToken, async(req, res)=>{
+app.put('/:id', checkToken, async(req, res)=>{
     const id = req.params.id
     const {senha, turno, matricula, nome_curso, nome_unidade} = req.body
 
@@ -38,4 +38,4 @@ router.put('/:id', checkToken, async(req, res)=>{
     }
 })
 
-module.exports = router
+module.exports = app

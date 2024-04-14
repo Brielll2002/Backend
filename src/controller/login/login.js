@@ -1,10 +1,11 @@
 const express = require('express')
-const router = express.Router()
-const jwt = require('jsonwebtoken')
+const app = express()
+const {gerarToken} = require('../../token/token')
 require('dotenv').config()
 const {pesquisarUsuario} = require('../../model/login/LoginModel')
 
-router.post('/', async (req, res)=>{
+
+app.post('/', async (req, res)=>{
     const {nome, matricula, senha} = req.body
 
     if(!nome || !matricula || !senha){
@@ -29,11 +30,7 @@ router.post('/', async (req, res)=>{
                 })
             }
             else if(results && results.length > 0){
-                const secretKey = jwt.sign('12h', process.env.SECRETKEY)
-                const token = jwt.sign(
-                    {id: results[0].id},
-                    secretKey
-                    )
+                const token =  gerarToken(results[0].id)
                 
                 res.status(200).json({
                     response: true,
@@ -64,4 +61,4 @@ router.post('/', async (req, res)=>{
     }  
 })
 
-module.exports = router
+module.exports = app

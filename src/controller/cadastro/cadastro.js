@@ -1,46 +1,47 @@
 const express = require('express')
-const router = express.Router()
+const app = express()
+app.use(express.json())
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
 const {verificarExistenciaUsuario, inserirUsuarioNoBancoDeDados, atualizacaoQuantidadeDeUsuarioNaUnidade, atualizacaoQuantidadeDeUsuarioNoCurso} = require('../../model/cadastro/CadastroModel')
 
-router.post('/', async (req, res)=>{
+app.post('/', async (req, res)=>{
     const {nome, sobrenome, senha, confirmSenha, turno, matricula, nome_curso, nome_unidade} = req.body
 
     if(!nome){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'nome' !"
         })
     }
     else if(!sobrenome){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'sobrenome' !"
         })
     }
     else if(!senha){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'senha' !"
         })
     }
     else if(!confirmSenha){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'confirmação de senha' !"
         })
     }
     else if(!turno){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'turno' !"
         })
     }
     else if(!matricula){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'matrícula' !"
         })
     }
     else if(matricula.length != 8){
@@ -52,13 +53,13 @@ router.post('/', async (req, res)=>{
     else if(!nome_curso){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'nome do curso' !"
         })
     }
     else if(!nome_unidade){
         res.status(400).json({
             response:false,
-            message:"Preencha todos os campos !"
+            message:"Preencha o campo 'nome da unidade' !"
         })
     }
     else if(senha !== confirmSenha){
@@ -74,7 +75,7 @@ router.post('/', async (req, res)=>{
 
                 res.status(500).json({
                     response: false,
-                    message: 'Ocorreu um erro, por favor tente mais tarde !'
+                    message: 'Ocorreu um erro, por favor tente novamente mais tarde !'
                 })
             }
             else if(results.length > 0){
@@ -114,4 +115,4 @@ router.post('/', async (req, res)=>{
     }
 })
 
-module.exports = router
+module.exports = app
