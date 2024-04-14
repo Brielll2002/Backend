@@ -7,10 +7,13 @@ app.use(express.urlencoded({
 }))
 app.use(cors())
 app.use(express.json())
+app.use(express.static('public'))
 
 ///////////
 //IMPORTS//
 ///////////
+const notFound = require('../src/notFound/notFound')
+//
 const cadastro = require('./controller/cadastro/cadastro')
 const cursosDisponiveis = require('./controller/cadastro/cursosDisponiveis')
 const unidadesDisponiveis = require('./controller/cadastro/unidadeDisponiveis')
@@ -29,6 +32,7 @@ const filtro = require('./controller/filtro/filtro')
 //
 const perfil = require('./controller/perfil/perfil')
 const editarPerfil = require('./controller/perfil/editarPerfil')
+
 
 ////////////
 //CADASTRO//
@@ -63,6 +67,10 @@ app.use('/filtro', filtro)
 //////////
 app.use('/perfil', perfil)
 app.use('/perfil/editar', editarPerfil)
+/////////////
+//NOT FOUND//
+/////////////
+app.use('/', notFound)
 
 ////////////////////////////////////////////////////////////
 //PORTA
