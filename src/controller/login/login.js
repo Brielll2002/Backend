@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.use(express.json())
 const {gerarToken} = require('../../token/token')
 require('dotenv').config()
 const {pesquisarUsuario} = require('../../model/login/LoginModel')

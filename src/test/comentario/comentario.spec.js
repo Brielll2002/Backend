@@ -7,8 +7,8 @@ test('Teste rota "/comentario"',(done)=>{
 
     const post = JSON.stringify({
         conteudo: 'Rodando os testes',
-        nome: 'gabriel',
-        id_user_comentario: 39,
+        nome: 'Nome',
+        id_user_comentario: 43,
         id_post_comentario: 9,
      })
 

@@ -1,16 +1,12 @@
-const app = require('../../controller/cadastro/cadastro')
+const app = require('../../controller/login/login')
 const request = require('supertest')
 
-test('Teste rota "/register"',(done)=>{
+test('Teste rota "/login"',(done)=>{
+
     const usuario = JSON.stringify({
         nome: 'Nome',
-        sobrenome: 'Sobrenome',
         senha: 'senha123',
-        confirmSenha: 'senha123',
-        turno: 'manha',
-        matricula: '12345678',
-        nome_curso: 'Engenharia de Software',
-        nome_unidade: 'Universidade XYZ'
+        matricula: '12345678'
      })
 
     request(app)

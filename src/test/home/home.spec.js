@@ -7,7 +7,7 @@ test('Teste rota "/home"', (done) => {
 
   request(app)
     .get('/home')
-    .query({id: '39'})
+    .query({params: '39'})
     .set('Authorization', `Bearer ${token}`)
     .expect('Content-Type', /json/)
     .end((err, res) => {

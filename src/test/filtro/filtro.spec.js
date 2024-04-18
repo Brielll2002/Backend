@@ -5,15 +5,16 @@ const { gerarToken } = require('../../token/token')
 test('Teste rota "/filtro"', (done) => {
   const token = gerarToken(1)
 
-  const filtro = {
-    nome_unidade_post: 'paulista',
-    nome_curso_post: 'ads',
+  const filtro = JSON.stringify({
+    nome_unidade_post: 'Universidade XYZ',
+    nome_curso_post: 'Engenharia de Software',
     turno: 'manha'
-  }
+  })
 
   request(app)
     .get('/filtro')
-    .query({id: '1'})
+    .set('Content-Type', 'application/json')
+    .query({params: '1'})
     .send(filtro)
     .set('Authorization', `Bearer ${token}`)
     .expect('Content-Type', /json/)

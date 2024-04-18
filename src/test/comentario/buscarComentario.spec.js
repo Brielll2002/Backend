@@ -7,7 +7,7 @@ test('Teste rota "/comentario/buscar"', (done) => {
 
   request(app)
     .get('/comentario')
-    .query({pg: '9'})
+    .query({params: '9'})
     .set('Authorization', `Bearer ${token}`)
     .expect('Content-Type', /json/)
     .end((err, res) => {

@@ -1,12 +1,14 @@
-const app = require('../../controller/cadastro/cadastro')
+const app = require('../../controller/perfil/editarPerfil')
 const request = require('supertest')
+const {gerarToken} = require('../../token/token')
 
-test('Teste rota "/register"',(done)=>{
+test('Teste rota "/perfl/editar"',(done)=>{
+
+    const token = gerarToken(1)
+
     const usuario = JSON.stringify({
         nome: 'Nome',
-        sobrenome: 'Sobrenome',
         senha: 'senha123',
-        confirmSenha: 'senha123',
         turno: 'manha',
         matricula: '12345678',
         nome_curso: 'Engenharia de Software',
@@ -14,8 +16,9 @@ test('Teste rota "/register"',(done)=>{
      })
 
     request(app)
-      .post('/')
+      .put('/perfil')
       .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${token}`)
       .send(usuario)
       .expect('Content-Type', /json/)
       .end((err, res) => {
