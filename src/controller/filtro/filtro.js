@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.use(express.json())
 const {checkToken} = require('../../token/token')
 const {filtro} = require('../../model/filtro/FiltroModel')
 

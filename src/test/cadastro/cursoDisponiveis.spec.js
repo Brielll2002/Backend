@@ -1,14 +1,10 @@
-const app = require('../../controller/home/home')
+const app = require('../../controller/cadastro/cursosDisponiveis')
 const request = require('supertest')
-const { gerarToken } = require('../../token/token')
 
-test('Teste rota "/home"', (done) => {
-  const token = gerarToken(1)
+test('Teste rota "/register/cursos"', (done) => {
 
   request(app)
-    .get('/home')
-    .query({id: '39'})
-    .set('Authorization', `Bearer ${token}`)
+    .get('/')
     .expect('Content-Type', /json/)
     .end((err, res) => {
 
@@ -23,4 +19,5 @@ test('Teste rota "/home"', (done) => {
 
       done()
     })
+
 })
