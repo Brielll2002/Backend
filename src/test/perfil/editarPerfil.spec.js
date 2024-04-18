@@ -16,7 +16,7 @@ test('Teste rota "/perfl/editar"',(done)=>{
      })
 
     request(app)
-      .put('/perfil')
+      .put('/43')
       .set('Content-Type', 'application/json')
       .set('Authorization', `Bearer ${token}`)
       .send(usuario)

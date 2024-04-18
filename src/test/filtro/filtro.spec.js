@@ -12,7 +12,7 @@ test('Teste rota "/filtro"', (done) => {
   })
 
   request(app)
-    .get('/filtro')
+    .get('/1')
     .set('Content-Type', 'application/json')
     .query({params: '1'})
     .send(filtro)

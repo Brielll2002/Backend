@@ -6,7 +6,7 @@ test('Teste rota "/home"', (done) => {
   const token = gerarToken(1)
 
   request(app)
-    .get('/home')
+    .get('/1')
     .query({params: '39'})
     .set('Authorization', `Bearer ${token}`)
     .expect('Content-Type', /json/)

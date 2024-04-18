@@ -58,6 +58,7 @@ function editarPerfil(senha, turno, matricula, nome_curso, nome_unidade,id,callb
         if(err){
             return callback(err, null)
         }
+
         const nomeCurso = results[1][0].nome_curso
         const nomeUnidade = results[1][0].nome_unidade
 
