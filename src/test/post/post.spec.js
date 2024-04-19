@@ -1,22 +1,25 @@
-const app = require('../../controller/comentario/comentario')
+const app = require('../../controller/post/post')
 const request = require('supertest')
 const {gerarToken} = require('../../token/token')
 
-test('Teste rota "/comentario"',(done)=>{
+test('Teste rota "/post"',(done)=>{
     const token = gerarToken(1)
-
-    const comentario = JSON.stringify({
-        conteudo: 'Rodando os testes',
-        nome: 'Nome',
-        id_user_comentario: 43,
-        id_post_comentario: 9,
+    
+    const post = JSON.stringify({
+        conteudo: 'Rodando os testes - Postando Publicação',
+        nome_usuario: 'Nome',
+        imagem: "",
+        nome_curso_post: 'Engenharia de Software',
+        nome_unidade_post: 'Universidade XYZ',
+        id_user_post: 43,
+        turno: 'manha'
      })
 
     request(app)
       .post('/')
       .set('Content-Type', 'application/json')
       .set('Authorization', `Bearer ${token}`)
-      .send(comentario)
+      .send(post)
       .expect('Content-Type', /json/)
       .end((err, res) => {
         console.log("Body:",res.request._data+"\n Res:", res.text)

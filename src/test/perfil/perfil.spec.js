@@ -1,13 +1,12 @@
-const app = require('../../controller/comentario/buscarComentario')
+const app = require('../../controller/perfil/perfil')
 const request = require('supertest')
 const { gerarToken } = require('../../token/token')
 
-test('Teste rota "/comentario/buscar"', (done) => {
+test('Teste rota "/perfil"', (done) => {
   const token = gerarToken(1)
 
   request(app)
-    .get('/10')
-    .query({params: '9'})
+    .get('/43')
     .set('Authorization', `Bearer ${token}`)
     .expect('Content-Type', /json/)
     .end((err, res) => {
