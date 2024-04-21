@@ -28,7 +28,7 @@
 
   Necessário para concluir post: nome_usuario, nome_unidade_post, nome_curso_post, id_user_post, conteudo, turno, imagem(opcional).
 
-- ROTA API DELETAR POST(delete): https://backend-3cga.onrender.com/post/delete/:id
+- ROTA API DELETAR POST(delete): https://backend-3cga.onrender.com/post/:id
 
 
   Para acessar a rota de post terá que ter um token gerado ao concluir o login
@@ -59,7 +59,7 @@
   Necessário para concluir comentário: conteudo, nome, id_user_comentario, id_post_comentario.
   
 
-- API COMENTÁRIOS EXISTENTES(get): https://backend-3cga.onrender.com/comentario/buscar/:id
+- API COMENTÁRIOS EXISTENTES(get): https://backend-3cga.onrender.com/comentario/:id
 
   Para acessar a rota de buscar comentario terá que ter um token gerado ao concluir o login
 
@@ -85,7 +85,7 @@
 
   Necessário para concluir a busca do perfil: perfil/:id.(id usuario)
   
-- ROTA API EDITAR PERFIL(put): https://backend-3cga.onrender.com/perfil/editar/:id
+- ROTA API EDITAR PERFIL(put): https://backend-3cga.onrender.com/perfil/:id
 
   Para acessar a rota de perfil terá que ter um token gerado ao concluir o login
 

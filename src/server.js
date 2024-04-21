@@ -19,19 +19,16 @@ const cursosDisponiveis = require('./controller/cadastro/cursosDisponiveis')
 const unidadesDisponiveis = require('./controller/cadastro/unidadeDisponiveis')
 //
 const post = require('./controller/post/post')
-const delPost = require('./controller/post/excluirPost')
 //
 const login = require('./controller/login/login')
 //
 const home = require('./controller/home/home')
 //
 const comentario = require('./controller/comentario/comentario')
-const buscarComentario = require('./controller/comentario/buscarComentario')
 //
 const filtro = require('./controller/filtro/filtro')
 //
 const perfil = require('./controller/perfil/perfil')
-const editarPerfil = require('./controller/perfil/editarPerfil')
 
 
 ////////////
@@ -48,7 +45,6 @@ app.use('/login', login)
 //POSTS//
 /////////
 app.use('/post', post)
-app.use('/post/delete', delPost)
 ////////
 //HOME//
 ////////
@@ -57,7 +53,6 @@ app.use('/home', home)
 //COMENTARIO//
 //////////////
 app.use('/comentario', comentario)
-app.use('/comentario/buscar', buscarComentario)
 //////////
 //FILTRO//
 //////////
@@ -66,7 +61,6 @@ app.use('/filtro', filtro)
 //PERFIL//
 //////////
 app.use('/perfil', perfil)
-app.use('/perfil/editar', editarPerfil)
 /////////////
 //NOT FOUND//
 /////////////

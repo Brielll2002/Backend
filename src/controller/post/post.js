@@ -5,7 +5,17 @@ require('dotenv').config()
 const {checkToken} = require('../../token/token')
 const resData = new Date()
 const data = resData.toISOString().split('T')[0]
-const {criarPost, mudarQuantidadeDePostEmUnidades, mudarQuantidadeDePostEmCurso} = require('../../model/post/PostModel')
+const {
+    criarPost,
+    mudarQuantidadeDePostEmUnidades,
+    mudarQuantidadeDePostEmCurso
+} = require('../../model/post/PostModel')
+const {
+    pegarInfoPost,
+    excluirPost,
+    diminuirQuantidadeDePostEmCurso,
+    diminuirQuantidadeDePostEmUnidades
+} = require('../../model/post/ExcluirPostModel')
 
 app.post('/', checkToken, async (req, res)=>{
     const {imagem, conteudo, nome_usuario, nome_curso_post, nome_unidade_post, id_user_post, turno} = req.body
@@ -45,6 +55,7 @@ app.post('/', checkToken, async (req, res)=>{
                     })
                 } 
                 catch (error) {
+                    console.error(err)
                     res.status(400).json({
                         response: false,
                         message: "Erro interno. Tente novamente mais tarde ! "
@@ -53,6 +64,50 @@ app.post('/', checkToken, async (req, res)=>{
             }
         })
     }
+})
+
+app.delete('/:id', checkToken, async (req, res)=>{
+    const id = req.params.id
+    excluirPost(id, function(err){
+        if(err){
+            console.error(err)
+            res.status(500).json({
+                response: false,
+                message: "Erro interno. Tente novamente mais tarde !"
+            })
+        }
+        else{
+            try {
+
+                pegarInfoPost(id, (err, results)=>{
+                    if(err){
+                        console.error(err)
+                    }
+                    else{
+                        console.log(results)
+                        diminuirQuantidadeDePostEmCurso(results[0].nome_curso_post, (err, results)=>{ 
+                        if(err){
+                            console.error(err)
+                        }
+                        })
+                        diminuirQuantidadeDePostEmUnidades(results[0].nome_unidade_post, (err, results)=>{ 
+                        if(err){
+                            console.error(err)
+                        }
+                        })
+                    }
+                })
+
+            } 
+            catch (error) {
+                console.error(err)
+                res.status(400).json({
+                    response: false,
+                    message: "Erro interno. Tente novamente mais tarde ! "
+                })
+            }
+        }
+    })
 })
 
 module.exports = app
