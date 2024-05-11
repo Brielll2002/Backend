@@ -2,12 +2,15 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const port = 3100
+const swagger = require('swagger-ui-express')
+const swaggerDoc = require('../swagger.json')
 app.use(express.urlencoded({
     extended: true
 }))
 app.use(cors())
 app.use(express.json())
 app.use(express.static('public'))
+
 
 ///////////
 //IMPORTS//
@@ -61,6 +64,10 @@ app.use('/filtro', filtro)
 //PERFIL//
 //////////
 app.use('/perfil', perfil)
+////////////////
+//DOCUMENTACAO//
+////////////////
+app.use('/api-docs', swagger.serve, swagger.setup(swaggerDoc))
 /////////////
 //NOT FOUND//
 /////////////

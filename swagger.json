@@ -1,0 +1,239 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Doubts",
+        "description": "Doubts documentação",
+        "version": "1.0.0"
+    },
+    "externalDocs": {
+        "description": "Entre em contato com o desenvolvedor",
+        "url": "https://wa.me/5581986654340"
+    },
+    "basePath": "/",
+    "paths": {
+        "/register/cursos": {
+            "get": {
+                "description": "Cursos cadastrados",
+                "summary": "Cursos cadastrados",
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "response": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "cursos": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id_curso": {
+                                                        "type": "string",
+                                                        "example": "1"
+                                                    },
+                                                    "nome_curso": {
+                                                        "type": "string",
+                                                        "example": "Nome do Curso"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "response": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Ocorreu um erro, tente novamente mais tarde !"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/register/unidades":{
+            "get":{
+                "description": "Unidades cadastradas",
+                "summary": "Unidades cadastradas",
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "response": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "unidades": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id_unidade": {
+                                                        "type": "string",
+                                                        "example": "1"
+                                                    },
+                                                    "nome_unidade":{
+                                                        "type": "string",
+                                                        "example": "Nome da unidade"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "description": "Erro interno",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "properties":{
+                                        "response":{
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message":{
+                                            "type":"string",
+                                            "example": "Ocorreu um erro, tente novamente mais tarde !"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "summary": "Cadastra um novo usuário",
+                "description": "Endpoint para cadastrar um novo usuário",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "sobrenome": {
+                                        "type": "string"
+                                    },
+                                    "senha": {
+                                        "type": "string"
+                                    },
+                                    "confirmSenha": {
+                                        "type": "string"
+                                    },
+                                    "turno": {
+                                        "type": "string"
+                                    },
+                                    "matricula": {
+                                        "type": "string"
+                                    },
+                                    "nome_curso": {
+                                        "type": "string"
+                                    },
+                                    "nome_unidade": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["nome", "sobrenome", "senha", "confirmSenha", "turno", "matricula", "nome_curso", "nome_unidade"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "response": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Cadastro realizado com sucessoo. Seja bem-vindo(a), Fulano!"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro de requisição inválida",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "response": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno no servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "response": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Ocorreu um erro, por favor tente mais tarde !"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                 }
+                }
+            }
+        }
+    }
