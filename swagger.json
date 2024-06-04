@@ -375,7 +375,7 @@
                   "security":[{"bearerAuth":[]}],
                   "parameters": [
                     {
-                      "name": "Página",
+                      "name": "pg",
                       "in": "path",
                       "description": "Número da página",
                       "required": true,
