@@ -370,99 +370,132 @@
             },
             "/home/{pg}": {
                 "get": {
-                    "summary": "Posts da página de início",
-                    "description": "Posts",
-                    "parameters": [
-                        {
-                            "name": "pg",
-                            "in": "path",
-                            "description": "Número da página",
-                            "required": true,
-                            "schema": {
+                  "summary": "Posts da página de início",
+                  "description": "Posts",
+                  "security":[{"bearerAuth":[]}],
+                  "parameters": [
+                    {
+                      "name": "Página",
+                      "in": "path",
+                      "description": "Número da página",
+                      "required": true,
+                      "schema": {
+                        "type": "integer"
+                      }
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "Sucesso",
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "type": "object",
+                            "properties": {
+                              "response": {
+                                "type": "boolean",
+                                "example": true
+                              },
+                              "qtdpag": {
                                 "type": "integer"
+                              },
+                              "pagatual": {
+                                "type": "integer"
+                              },
+                              "posts": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id_post": {
+                                      "type": "string"
+                                    },
+                                    "data": {
+                                      "type": "string"
+                                    },
+                                    "conteudo": {
+                                      "type": "string"
+                                    },
+                                    "imagem": {
+                                      "type": "string"
+                                    },
+                                    "nome_usuario": {
+                                      "type": "string"
+                                    },
+                                    "id_user_post": {
+                                      "type": "string"
+                                    },
+                                    "nome_unidade_post": {
+                                      "type": "string"
+                                    },
+                                    "nome_curso_post": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              },
+                              "usuario": {
+                                "type": "object",
+                                "properties": {
+                                  "id_usuario": {
+                                    "type": "string"
+                                  },
+                                  "nome": {
+                                    "type": "string"
+                                  },
+                                  "sobrenome": {
+                                    "type": "string"
+                                  },
+                                  "email": {
+                                    "type": "string"
+                                  },
+                                  "turno": {
+                                    "type": "string"
+                                  },
+                                  "matricula": {
+                                    "type": "string"
+                                  },
+                                  "nome_curso": {
+                                    "type": "string"
+                                  },
+                                  "nome_unidade": {
+                                    "type": "string"
+                                  },
+                                  "data_cadastro": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
                             }
+                          }
                         }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "Sucesso",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "response": {
-                                                "type": "boolean",
-                                                "example": true
-                                            },
-                                            "qtdpag": {
-                                                "type": "integer"
-                                            },
-                                            "pagatual": {
-                                                "type": "integer"
-                                            },
-                                            "posts": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "id_post": {
-                                                            "type": "string"
-                                                        },
-                                                        "data": {
-                                                            "type": "string"
-                                                        },
-                                                        "conteudo": {
-                                                            "type": "string"
-                                                        },
-                                                        "imagem": {
-                                                            "type": "string"
-                                                        },
-                                                        "nome_usuario": {
-                                                            "type": "string"
-                                                        },
-                                                        "id_user_post": {
-                                                            "type": "string"
-                                                        },
-                                                        "nome_unidade_post": {
-                                                            "type": "string"
-                                                        },
-                                                        "nome_curso_post": {
-                                                            "type": "string"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                      }
+                    },
+                    "400": {
+                      "description": "Erro de requisição inválida",
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "type": "object",
+                            "properties": {
+                              "response": {
+                                "type": "boolean",
+                                "example": false
+                              },
+                              "alert": {
+                                "type": "string"
+                              },
+                              "primeirapag": {
+                                "type": "integer"
+                              },
+                              "qtdpag": {
+                                "type": "integer"
+                              }
                             }
-                        },
-                        "400": {
-                            "description": "Erro de requisição inválida",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "object",
-                                        "properties": {
-                                            "response": {
-                                                "type": "boolean",
-                                                "example": false
-                                            },
-                                            "alert": {
-                                                "type": "string"
-                                            },
-                                            "primeriapag": {
-                                                "type": "integer"
-                                            },
-                                            "qtdpag": {
-                                                "type": "integer"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
+                          }
+                        }
+                      }
+                    },
                         "500": {
                             "description": "Erro interno no servidor",
                             "content": {
@@ -490,6 +523,7 @@
                 "post": {
                     "summary": "Cria um novo post",
                     "description": "Criar um novo post",
+                    "security":[{"bearerAuth":[]}],
                     "requestBody": {
                         "required": true,
                         "content": {
@@ -591,6 +625,7 @@
                 "delete": {
                     "summary": "Exclui um post",
                     "description": "Excluir um post",
+                    "security":[{"bearerAuth":[]}],
                     "parameters": [
                         {
                             "name": "id",
@@ -669,6 +704,7 @@
                 "post": {
                     "summary": "Cria um novo comentário",
                     "description": "Criar um novo comentário",
+                    "security":[{"bearerAuth":[]}],
                     "requestBody": {
                         "required": true,
                         "content": {
@@ -761,6 +797,7 @@
                 "get": {
                     "summary": "Comentários de um post",
                     "description": "Comentários de um post",
+                    "security":[{"bearerAuth":[]}],
                     "parameters": [
                         {
                             "name": "id",
@@ -861,6 +898,7 @@
                 "get": {
                     "summary": "Filtrar posts",
                     "description": "Filtrar posts",
+                    "security":[{"bearerAuth":[]}],
                     "parameters": [
                         {
                             "name": "pg",
@@ -973,6 +1011,26 @@
                                 }
                             }
                         },
+                        "401": {
+                            "description": "Erro de requisição inválida",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "response": {
+                                                "type": "boolean",
+                                                "example": false
+                                            },
+                                            "alert": {
+                                                "type": "string",
+                                                "example": "Preencha todos os campos!"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
                         "500": {
                             "description": "Erro interno no servidor",
                             "content": {
@@ -1000,6 +1058,7 @@
                 "get": {
                     "summary": "Perfil do usuário",
                     "description": "Perfil do usuário",
+                    "security":[{"bearerAuth":[]}],
                     "parameters": [
                         {
                             "name": "id",
@@ -1132,6 +1191,7 @@
                 "put": {
                     "summary": "Atualizar perfil",
                     "description": "Atualizar o perfil do usuário",
+                    "security":[{"bearerAuth":[]}],
                     "parameters": [
                         {
                             "name": "id",
@@ -1236,5 +1296,14 @@
                 }
             }
         
+    },
+    "components":{
+        "securitySchemes":{
+            "bearerAuth":{
+                "type":"http",
+                "scheme":"bearer",
+                "bearerFormat":"JWT"
+            }
+        }
     }
 }

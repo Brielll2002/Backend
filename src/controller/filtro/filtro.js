@@ -8,7 +8,13 @@ app.get('/:pg', checkToken,async (req, res)=>{
     const pagina = req.params.pg
     const {nome_unidade_post,nome_curso_post,turno} = req.body
 
-    if((turno && !nome_curso_post) || (turno && !nome_unidade_post) || (nome_curso_post && !nome_unidade_post)){
+    if(!turno || !nome_curso_post || !nome_unidade_post){
+        res.status(401).json({
+            response: false,
+            alert: "Preencha todos os campos!"
+        })
+    }
+    else if((turno && !nome_curso_post) || (turno && !nome_unidade_post) || (nome_curso_post && !nome_unidade_post)){
         res.status(400).json({
             response: false,
             alert: "Para conseguir filtrar deve seguir a ordem: nome_unidade_post -> nome_curso_post -> turno."
